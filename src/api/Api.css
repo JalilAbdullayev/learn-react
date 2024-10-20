@@ -1,0 +1,9 @@
+.list {
+    columns: 250px 5;
+    column-gap: 10px;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
