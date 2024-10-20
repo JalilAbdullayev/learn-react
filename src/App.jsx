@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+const App = () => {
+    const fullName = 'Jalil Abdullayev';
+    const students = 43;
+    const isTrue = true;
+    const date = 'date';
+    const url = "https://picsum.photos/250/250";
+    return (
+        <>
+            <h1>
+                Full Name: {fullName}
+            </h1>
+            <p>
+                Students: {students}
+            </p>
+            <p>
+                Is True: {isTrue.toString()}
+            </p>
+            {isTrue ? <p>Students</p> : <p>Courses</p>}
+            <input type={date}/>
+            <img src={url} alt=""/>
+            <div style={{width: '250px', height: '250px', backgroundColor: 'blue'}}></div>
+        </>
+    )
 }
 
 export default App
