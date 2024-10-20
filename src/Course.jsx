@@ -1,6 +1,6 @@
 export const Course = ({title, image, description}) => {
     return (
-        <div className='column'>
+        <div className='column is-3'>
             <div className="card">
                 <div className="card-image">
                     <figure className="image is-4by3">

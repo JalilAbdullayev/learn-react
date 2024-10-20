@@ -8,35 +8,43 @@ import FrontEnd from '../public/images/op-Ten-Front-End-Design-Rules-For-Develop
 import {useState} from "react";
 
 const App = () => {
-    const [value, setValue] = useState(0);
-    const handleClick = () => setValue(value + 1);
+    const [courses, setCourses] = useState([]);
+    const handleClick = () => {
+        setCourses([...courses, getRandomCourse()]);
+    }
+    const getRandomCourse = () => {
+        const coursesArr = [{
+            title: 'Angular',
+            description: 'Angular is an open source web application framework created by Google and maintained by the Angular Team.',
+            image: Angular
+        }, {
+            title: 'Bootstrap',
+            description: 'Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first websites.',
+            image: Bootstrap
+        }, {
+            title: 'Full Stack',
+            description: 'Full Stack Development is the process of building a web application using the front end and back end of the application',
+            image: FullStack
+        }, {
+            title: 'Front End',
+            description: 'Front End Development is the process of building a web application using the front end of the application',
+            image: FrontEnd
+        }];
+        return coursesArr[Math.floor(Math.random() * coursesArr.length)];
+    }
+
     return (
-        <>
-            <section className="hero is-link">
-                <div className="hero-body">
-                    <p className="title">
-                        My courses
-                    </p>
-                </div>
-            </section>
-            <div className='columns container section'>
-                <Course title='Angular' image={Angular} description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
-            cupiditate dicta dolore, eius eligendi eveniet fugit illum labore mollitia odio perferendis praesentium
-            reprehenderit, repudiandae rerum sit soluta tempore. Ex, rerum?'/>
-                <Course title='Bootstrap 5' image={Bootstrap} description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
-            cupiditate dicta dolore, eius eligendi eveniet fugit illum labore mollitia odio perferendis praesentium
-            reprehenderit, repudiandae rerum sit soluta tempore. Ex, rerum?'/>
-                <Course title='Full Stack' image={FullStack} description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
-            cupiditate dicta dolore, eius eligendi eveniet fugit illum labore mollitia odio perferendis praesentium
-            reprehenderit, repudiandae rerum sit soluta tempore. Ex, rerum?'/>
-                <Course title='Front-end' image={FrontEnd} description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
-            cupiditate dicta dolore, eius eligendi eveniet fugit illum labore mollitia odio perferendis praesentium
-            reprehenderit, repudiandae rerum sit soluta tempore. Ex, rerum?'/>
-            </div>
-            <button className="button is-link" onClick={handleClick}>
-                Course count: {value}
+        <main className='is-display-flex is-flex-direction-column is-justify-content-center is-align-items-center my-6'>
+            <button onClick={handleClick} className='button is-link'>
+                Add Course
             </button>
-        </>
+            <div className='columns container section is-multiline'>
+                {courses.map((course, index) => {
+                    return <Course title={course.title} image={course.image} description={course.description}
+                                   key={index}/>
+                })}
+            </div>
+        </main>
     )
 }
 
