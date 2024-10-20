@@ -1,10 +1,9 @@
-import 'bulma/css/bulma.min.css';
-import './App.css';
-import {Course} from "./Course.jsx";
-import Angular from '../public/images/channels4_profile.jpg';
-import Bootstrap from '../public/images/Bootstrap_logo.svg.png';
-import FullStack from '../public/images/Link Sharing-Foundation Full Stack Web Development.jpg';
-import FrontEnd from '../public/images/op-Ten-Front-End-Design-Rules-For-Developers_Luke-Social.png';
+import '../App.css';
+import {Course} from "./components/Course.jsx";
+import Angular from '../../public/images/channels4_profile.jpg';
+import Bootstrap from '../../public/images/Bootstrap_logo.svg.png';
+import FullStack from '../../public/images/Link Sharing-Foundation Full Stack Web Development.jpg';
+import FrontEnd from '../../public/images/op-Ten-Front-End-Design-Rules-For-Developers_Luke-Social.png';
 import {useState} from "react";
 
 const App = () => {
