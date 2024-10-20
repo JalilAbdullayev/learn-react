@@ -1,7 +1,14 @@
+import {useState} from "react";
+
 export const Header = ({search}) => {
+    const [value, setValue] = useState('');
     const handleForm = event => {
         event.preventDefault();
-        search('Jalil');
+        search(value);
+    };
+
+    const handleChange = event => {
+        setValue(event.target.value);
     };
 
     return (
@@ -12,7 +19,8 @@ export const Header = ({search}) => {
                         What are you looking for?
                     </label>
                     <div className="control">
-                        <input className="input" id="search" type="search" placeholder="Search"/>
+                        <input className="input" id="search" type="search" placeholder="Search" value={value}
+                               onChange={handleChange}/>
                     </div>
                 </div>
             </form>
