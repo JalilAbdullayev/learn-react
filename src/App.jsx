@@ -5,8 +5,11 @@ import Angular from '../public/images/channels4_profile.jpg';
 import Bootstrap from '../public/images/Bootstrap_logo.svg.png';
 import FullStack from '../public/images/Link Sharing-Foundation Full Stack Web Development.jpg';
 import FrontEnd from '../public/images/op-Ten-Front-End-Design-Rules-For-Developers_Luke-Social.png';
+import {useState} from "react";
 
 const App = () => {
+    const [value, setValue] = useState(0);
+    const handleClick = () => setValue(value + 1);
     return (
         <>
             <section className="hero is-link">
@@ -30,6 +33,9 @@ const App = () => {
             cupiditate dicta dolore, eius eligendi eveniet fugit illum labore mollitia odio perferendis praesentium
             reprehenderit, repudiandae rerum sit soluta tempore. Ex, rerum?'/>
             </div>
+            <button className="button is-link" onClick={handleClick}>
+                Course count: {value}
+            </button>
         </>
     )
 }
